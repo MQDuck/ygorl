@@ -92,4 +92,4 @@ export function generateAbilities(total, minScore, maxScore, numAbilities, entro
     return abilities;
 }
 
-console.log(generateAbilities(75, 6, 17, 6, 100));
+console.log(generateAbilities(75, 3, 18, 6, 100));

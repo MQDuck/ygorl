@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15a6dfce-a0a2-4b9e-8251-2ffd28ccb46e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generateAbilities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sliderComponents.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generateAbilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/generateAbilities.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +21,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -53,7 +55,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="C:\Users\mqduck\WebstormProjects\ygorl\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -113,8 +115,16 @@
       <workItem from="1598917313756" duration="3227000" />
       <workItem from="1598920574067" duration="129000" />
       <workItem from="1598921254908" duration="4946000" />
-      <workItem from="1598994449254" duration="5250000" />
+      <workItem from="1598994449254" duration="18776000" />
     </task>
+    <task id="LOCAL-00001" summary="Add generateAbilities.js">
+      <created>1598999722643</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598999722643</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,31 +142,43 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add generateAbilities.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add generateAbilities.js" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598996686809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598996686809" />
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599014304756">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599014304756" />
+    <state x="905" y="261" key="CommitChangelistDialog2" timestamp="1598999722106">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="905" y="261" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1598999722106" />
     <state x="1060" y="467" key="FileChooserDialogImpl" timestamp="1598996674715">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598996674715" />
-    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1598999596419">
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1599020949192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598999596419" />
-    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1598999596418">
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
+    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1599020949192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598999596418" />
-    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1598999596418">
+    <state width="2539" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
+    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1599020949192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598999596418" />
-    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1598999596418">
+    <state width="2539" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
+    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1599020949192">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598999596418" />
+    <state width="2539" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
     <state width="2539" height="492" key="GridCell.Tab.1.bottom" timestamp="1598996289485">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -189,10 +211,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2539" height="492" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289486" />
-    <state x="781" y="345" key="SettingsEditor" timestamp="1598998508338">
+    <state x="326" y="282" width="1563" height="824" key="SettingsEditor" timestamp="1599005089852">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1598998508338" />
+    <state x="326" y="282" width="1563" height="824" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1599005089852" />
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599013772786">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1599013772786" />
+    <state x="987" y="433" width="1216" height="825" key="find.popup" timestamp="1599002127123">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="987" y="433" width="1216" height="825" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1599002127123" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1599017184058">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1599017184058" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
