@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15a6dfce-a0a2-4b9e-8251-2ffd28ccb46e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sliderComponents.tsx" afterDir="false" />
+    <list default="true" id="15a6dfce-a0a2-4b9e-8251-2ffd28ccb46e" name="Default Changelist" comment="Create basic interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generateAbilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/generateAbilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generateAbilities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/generateAbilities.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +14,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/asdf.ts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,7 +50,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="C:\Users\mqduck\WebstormProjects\ygorl\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -68,13 +63,27 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="asdf.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/asdf.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
     <configuration name="asdf.ts" type="NodeJSConfigurationType" nameIsGenerated="true" node-parameters="--require ts-node/register" path-to-js-file="src/asdf.ts" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="generateAbilities.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/generateAbilities.js" working-dir="$PROJECT_DIR$/src">
+    <configuration name="generateAbilities.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/generateAbilities.ts" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <configuration name="test.mjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/test.mjs" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm build" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <arguments value="--profile" />
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -90,13 +99,16 @@
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="Node.js.asdf.ts" />
-      <item itemvalue="npm.npm start" />
+      <item itemvalue="Node.js.asdf.js" />
+      <item itemvalue="Node.js.generateAbilities.ts" />
       <item itemvalue="Node.js.test.mjs" />
-      <item itemvalue="Node.js.generateAbilities.js" />
+      <item itemvalue="npm.npm build" />
+      <item itemvalue="npm.npm start" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.generateAbilities.js" />
+        <item itemvalue="Node.js.asdf.js" />
+        <item itemvalue="Node.js.generateAbilities.ts" />
         <item itemvalue="Node.js.test.mjs" />
       </list>
     </recent_temporary>
@@ -115,7 +127,10 @@
       <workItem from="1598917313756" duration="3227000" />
       <workItem from="1598920574067" duration="129000" />
       <workItem from="1598921254908" duration="4946000" />
-      <workItem from="1598994449254" duration="18776000" />
+      <workItem from="1598994449254" duration="27920000" />
+      <workItem from="1599080048959" duration="7611000" />
+      <workItem from="1600053913222" duration="3944000" />
+      <workItem from="1600122198285" duration="4679000" />
     </task>
     <task id="LOCAL-00001" summary="Add generateAbilities.js">
       <created>1598999722643</created>
@@ -124,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598999722643</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create basic interface">
+      <created>1599021401977</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599021401977</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,100 +166,109 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add generateAbilities.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add generateAbilities.js" />
+    <MESSAGE value="Create basic interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create basic interface" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598996686809">
+    <state x="872" y="358" key="#Deployment" timestamp="1599081952555">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598996686809" />
+    <state x="872" y="358" key="#Deployment/0.0.2560.1400@0.0.2560.1400" timestamp="1599081952555" />
+    <state x="856" y="345" key="#SSH_Configurations" timestamp="1599081830936">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="856" y="345" key="#SSH_Configurations/0.0.2560.1400@0.0.2560.1400" timestamp="1599081830936" />
+    <state x="734" y="355" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599090254287">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599090254287" />
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599014304756">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599014304756" />
-    <state x="905" y="261" key="CommitChangelistDialog2" timestamp="1598999722106">
+    <state x="905" y="261" key="CommitChangelistDialog2" timestamp="1599038924481">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="905" y="261" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1598999722106" />
-    <state x="1060" y="467" key="FileChooserDialogImpl" timestamp="1598996674715">
+    <state x="905" y="261" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1599038924481" />
+    <state x="92" y="92" width="2376" height="1216" key="DirDiffDialog" timestamp="1599082956158">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598996674715" />
-    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1599020949192">
+    <state x="92" y="92" width="2376" height="1216" key="DirDiffDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599082956158" />
+    <state x="1060" y="467" key="FileChooserDialogImpl" timestamp="1599083057094">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
-    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1599020949192">
+    <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1599083057094" />
+    <state width="2539" height="268" key="GridCell.Tab.0.bottom" timestamp="1599090540657">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
-    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1599020949192">
+    <state width="2539" height="268" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1599090540657" />
+    <state width="2539" height="268" key="GridCell.Tab.0.center" timestamp="1599090540656">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
-    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1599020949192">
+    <state width="2539" height="268" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1599090540656" />
+    <state width="2539" height="268" key="GridCell.Tab.0.left" timestamp="1599090540656">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1599020949192" />
-    <state width="2539" height="492" key="GridCell.Tab.1.bottom" timestamp="1598996289485">
+    <state width="2539" height="268" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1599090540656" />
+    <state width="2539" height="268" key="GridCell.Tab.0.right" timestamp="1599090540657">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289485" />
-    <state width="2539" height="492" key="GridCell.Tab.1.center" timestamp="1598996289485">
+    <state width="2539" height="268" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1599090540657" />
+    <state width="2539" height="310" key="GridCell.Tab.1.bottom" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289485" />
-    <state width="2539" height="492" key="GridCell.Tab.1.left" timestamp="1598996289485">
+    <state width="2539" height="310" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state width="2539" height="310" key="GridCell.Tab.1.center" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289485" />
-    <state width="2539" height="492" key="GridCell.Tab.1.right" timestamp="1598996289485">
+    <state width="2539" height="310" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state width="2539" height="310" key="GridCell.Tab.1.left" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289485" />
-    <state width="2539" height="492" key="GridCell.Tab.2.bottom" timestamp="1598996289486">
+    <state width="2539" height="310" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state width="2539" height="310" key="GridCell.Tab.1.right" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289486" />
-    <state width="2539" height="492" key="GridCell.Tab.2.center" timestamp="1598996289485">
+    <state width="2539" height="310" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state width="2539" height="310" key="GridCell.Tab.2.bottom" timestamp="1599090234603">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289485" />
-    <state width="2539" height="492" key="GridCell.Tab.2.left" timestamp="1598996289485">
+    <state width="2539" height="310" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234603" />
+    <state width="2539" height="310" key="GridCell.Tab.2.center" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289485" />
-    <state width="2539" height="492" key="GridCell.Tab.2.right" timestamp="1598996289486">
+    <state width="2539" height="310" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state width="2539" height="310" key="GridCell.Tab.2.left" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="492" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598996289486" />
-    <state x="326" y="282" width="1563" height="824" key="SettingsEditor" timestamp="1599005089852">
+    <state width="2539" height="310" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state width="2539" height="310" key="GridCell.Tab.2.right" timestamp="1599090234601">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="326" y="282" width="1563" height="824" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1599005089852" />
+    <state width="2539" height="310" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1599090234601" />
+    <state x="326" y="282" width="1563" height="824" key="SettingsEditor" timestamp="1600068556415">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="326" y="282" width="1563" height="824" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1600068556415" />
+    <state x="1152" y="544" key="cloudConfig.SelfSettingsDialog" timestamp="1599081968519">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1152" y="544" key="cloudConfig.SelfSettingsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1599081968519" />
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599013772786">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1599013772786" />
-    <state x="987" y="433" width="1216" height="825" key="find.popup" timestamp="1599002127123">
+    <state x="987" y="433" width="1216" height="825" key="find.popup" timestamp="1599080116238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="987" y="433" width="1216" height="825" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1599002127123" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1599017184058">
+    <state x="987" y="433" width="1216" height="825" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1599080116238" />
+    <state x="1105" y="430" key="ftp.server.browser" timestamp="1599083063828">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1599017184058" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/generateAbilities.js</url>
-          <line>94</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="1105" y="430" key="ftp.server.browser/0.0.2560.1400@0.0.2560.1400" timestamp="1599083063828" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1599081974380">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1599081974380" />
   </component>
 </project>

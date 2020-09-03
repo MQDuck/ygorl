@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="791dcbbe-26c6-4206-8428-c65e4ec65eb3" name="mqduck.net" url="http://mqduck.net/ygorl">
+        <fileTransfer rootFolder="/home/www" accessType="SFTP" host="mqduck.net" port="22" sshConfigId="562e0fbd-08e6-4f71-a833-f8cf06ce61f0" sshConfig="www@mqduck.net:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

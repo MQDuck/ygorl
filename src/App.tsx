@@ -1,26 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.png'
 import './App.css';
 import {generateAbilities} from './generateAbilities';
-import {Slider, Rail, Handles, Tracks, Ticks} from 'react-compound-slider';
-import {Handle, Track} from './sliderComponents';
 
 const NUM_ABILITIES = 6;
-
-/*const sliderStyle: React.CSSProperties = {
-  margin: '5%',
-  position: 'relative',
-  width: '90%'
-};
-
-const railStyle: React.CSSProperties = {
-  position: 'absolute',
-  width: '100%',
-  height: 14,
-  borderRadius: 7,
-  cursor: 'pointer',
-  backgroundColor: 'rgb(155,155,155)'
-};*/
+const DEFAULT_TOTAL = 72;
+const DEFAULT_MIN_SCORE = 6;
+const DEFAULT_MAX_SCORE = 17;
 
 class App extends React.Component<{},
   {
@@ -28,82 +14,115 @@ class App extends React.Component<{},
     entropy: number,
     total: number
     minScore: number,
-    maxScore: number
+    maxScore: number,
+    totalStr: string,
+    minScoreStr: string,
+    maxScoreStr: string
   }> {
   constructor(props: {}) {
     super(props);
     this.state = {
       abilities: Array(6),
       entropy: 30,
-      total: 72,
-      minScore: 6,
-      maxScore: 17
+      total: DEFAULT_TOTAL,
+      minScore: DEFAULT_MIN_SCORE,
+      maxScore: DEFAULT_MAX_SCORE,
+      totalStr: DEFAULT_TOTAL.toString(),
+      minScoreStr: DEFAULT_MIN_SCORE.toString(),
+      maxScoreStr: DEFAULT_MAX_SCORE.toString()
     };
   }
 
-  /*public onSliderChange = (entropy: ReadonlyArray<number>) => {
-    console.log(entropy);
-    this.setState({entropy: entropy});
-  };*/
+  public updateParameters = (total: number, minScore: number, maxScore: number) => {
+    if (minScore * NUM_ABILITIES > total) {
+      minScore = Math.floor(total / NUM_ABILITIES);
+    }
+    if (maxScore * NUM_ABILITIES < total) {
+      maxScore = Math.ceil(total / NUM_ABILITIES);
+    }
+    this.setState({
+      total: total,
+      minScore: minScore,
+      maxScore: maxScore,
+      totalStr: total.toString(),
+      minScoreStr: minScore.toString(),
+      maxScoreStr: maxScore.toString()
+    });
+  };
 
-  public updateParameters = () => {
-    const stateUpdate: any = {};
-    if (this.state.minScore * NUM_ABILITIES > this.state.total) {
-      stateUpdate.minScore = Math.floor(this.state.total / NUM_ABILITIES);
+  public updateTotal = () => {
+    const total = parseInt(this.state.totalStr);
+    if (isNaN(total)) {
+      this.setState({totalStr: this.state.total.toString()});
+    } else {
+      this.updateParameters(total, this.state.minScore, this.state.maxScore);
     }
-    if (this.state.maxScore * NUM_ABILITIES < this.state.total) {
-      stateUpdate.maxScore = Math.ceil(this.state.total / NUM_ABILITIES);
+  };
+
+  public updateMinScore = () => {
+    const minScore = parseInt(this.state.minScoreStr);
+    if (isNaN(minScore)) {
+      this.setState({minScoreStr: this.state.minScore.toString()});
+    } else {
+      this.updateParameters(this.state.total, minScore, this.state.maxScore);
     }
-    this.setState(stateUpdate);
+  };
+
+  public updateMaxScore = () => {
+    const maxScore = parseInt(this.state.maxScoreStr);
+    if (isNaN(maxScore)) {
+      this.setState({maxScoreStr: this.state.maxScore.toString()});
+    } else {
+      this.updateParameters(this.state.total, this.state.minScore, maxScore);
+    }
   };
 
   render() {
-    //const domain = [0, 100];
-
     return (
       <div className='App'>
         <header className='App-header'>
+          <img src={logo} alt='Ysgorl' className='App-logo' />
           Ability points
           <label>
-            Total:
+            {'Total: '}
             <input
               type='text'
               name='total'
-              value={this.state.total}
-              onChange={event => this.setState({total: parseInt(event.target.value)})}
-              onBlur={() => this.updateParameters()}
+              value={this.state.totalStr}
+              onChange={event => this.setState({totalStr: event.target.value})}
+              onBlur={() => this.updateTotal()}
               onKeyDown={event => {
                 if (event.key === 'Enter') {
-                  this.updateParameters();
+                  this.updateTotal();
                 }
               }}
             />
           </label>
           Ability score minimum and maximum
           <label>
-            Minimum:
+            {'Minimum: '}
             <input
               type='text'
               name='minimum'
-              value={this.state.minScore}
-              onChange={event => this.setState({minScore: parseInt(event.target.value)})}
-              onBlur={() => this.updateParameters()}
+              value={this.state.minScoreStr}
+              onChange={event => this.setState({minScoreStr: event.target.value})}
+              onBlur={() => this.updateMinScore()}
               onKeyDown={event => {
                 if (event.key === 'Enter') {
-                  this.updateParameters();
+                  this.updateMinScore();
                 }
               }}
             />
-            Maximum:
+            {' Maximum: '}
             <input
               type='text'
               name='maximum'
-              value={this.state.maxScore}
-              onChange={event => this.setState({maxScore: parseInt(event.target.value)})}
-              onBlur={() => this.updateParameters()}
+              value={this.state.maxScoreStr}
+              onChange={event => this.setState({maxScoreStr: event.target.value})}
+              onBlur={() => this.updateMaxScore()}
               onKeyDown={event => {
                 if (event.key === 'Enter') {
-                  this.updateParameters();
+                  this.updateMaxScore();
                 }
               }}
             />
@@ -117,64 +136,26 @@ class App extends React.Component<{},
               value={this.state.entropy}
               onChange={event => this.setState({entropy: parseInt(event.target.value)})}
             />
-            {/*<Slider
-              mode={1}
-              step={1}
-              domain={domain}
-              rootStyle={sliderStyle}
-              onChange={this.onSliderChange}
-              onUpdate={this.onSliderChange}
-              values={this.state.entropy}
-            >
-              <Rail>
-                {({getRailProps}) => (
-                  <div style={railStyle} {...getRailProps()} />
-                )}
-              </Rail>
-              <Handles>
-                {({handles, getHandleProps}) => (
-                  <div className="slider-handles">
-                    {handles.map(handle => (
-                      <Handle
-                        key={handle.id}
-                        handle={handle}
-                        domain={domain}
-                        getHandleProps={getHandleProps}
-                      />
-                    ))}
-                  </div>
-                )}
-              </Handles>
-              <Tracks right={false}>
-                {({tracks, getTrackProps}) => (
-                  <div className="slider-tracks">
-                    {tracks.map(({id, source, target}) => (
-                      <Track
-                        key={id}
-                        source={source}
-                        target={target}
-                        getTrackProps={getTrackProps}
-                      />
-                    ))}
-                  </div>
-                )}
-              </Tracks>
-            </Slider>*/}
-            {this.state.entropy}
+            {' ' + this.state.entropy}
           </label>
 
           <button
             type='button'
             onClick={() => {
               this.setState({
-                abilities: generateAbilities(this.state.total, this.state.minScore, this.state.maxScore, NUM_ABILITIES, this.state.entropy)
+                abilities: generateAbilities(
+                  this.state.total,
+                  this.state.minScore,
+                  this.state.maxScore,
+                  NUM_ABILITIES,
+                  Math.ceil(this.state.total * (this.state.maxScore - this.state.minScore) * this.state.entropy / 1000))
               });
             }}
           >
-            Click Me!
+            Generate Ability Scores
           </button>
           {this.state.abilities.map((value, index) => {
-            return value + ((index === this.state.abilities.length - 1) ? '' : ', ');
+            return value + ((index === this.state.abilities.length - 1) ? '' : '  |  ');
           })}
         </header>
       </div>

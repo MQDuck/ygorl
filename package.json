@@ -38,5 +38,6 @@
     ]
   },
   "devDependencies": {},
-  "type": "module"
+  "type": "module",
+  "homepage": "/ygorl"
 }
