@@ -40,7 +40,7 @@ export function generateAbilities(
   }
 
   // Randomly modify values values within the passed parameters.
-  for (let k = 0; k < entropy; ++k) {
+  /*for (let k = 0; k < entropy; ++k) {
     let up: number;
     let down: number;
     let minIndex = 0;
@@ -91,6 +91,41 @@ export function generateAbilities(
         }
       }
       down = randElement(downCandidates);
+    }
+
+    ++abilities[up];
+    --abilities[down];
+  }*/
+
+  for (let k = 0; k < entropy; ++k) {
+    let upCandidates = Array<number>();
+    let downCandidates = Array<number>();
+    let up: number;
+    let down: number;
+
+    for (let i = 0; i < numAbilities; ++i) {
+      if (abilities[i] < maxScore) {
+        upCandidates.push(i);
+      }
+      if (abilities[i] > minScore) {
+        downCandidates.push(i);
+      }
+    }
+
+    if (downCandidates.length !== 1) {
+      up = randElement(upCandidates);
+      const upDownIndex = downCandidates.indexOf(up);
+      if (upDownIndex !== -1) {
+        downCandidates.splice(upDownIndex, 1);
+      }
+      down = randElement(downCandidates);
+    } else {
+      down = downCandidates[0];
+      const downUpIndex = upCandidates.indexOf(down);
+      if (downUpIndex !== -1) {
+        upCandidates.splice(downUpIndex, 1);
+      }
+      up = randElement(upCandidates)
     }
 
     ++abilities[up];

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.png'
+import logo from './logo.png';
 import './App.css';
 import {generateAbilities} from './generateAbilities';
 
@@ -7,11 +7,12 @@ const NUM_ABILITIES = 6;
 const DEFAULT_TOTAL = 72;
 const DEFAULT_MIN_SCORE = 6;
 const DEFAULT_MAX_SCORE = 17;
+const DEFAULT_ENTROPY = 50;
 
 class App extends React.Component<{},
   {
     abilities: number[],
-    entropy: number,
+    entropySlider: number,
     total: number
     minScore: number,
     maxScore: number,
@@ -23,7 +24,7 @@ class App extends React.Component<{},
     super(props);
     this.state = {
       abilities: Array(6),
-      entropy: 30,
+      entropySlider: DEFAULT_ENTROPY,
       total: DEFAULT_TOTAL,
       minScore: DEFAULT_MIN_SCORE,
       maxScore: DEFAULT_MAX_SCORE,
@@ -81,7 +82,7 @@ class App extends React.Component<{},
     return (
       <div className='App'>
         <header className='App-header'>
-          <img src={logo} alt='Ysgorl' className='App-logo' />
+          <img src={logo} alt='Ysgorl' className='App-logo'/>
           Ability points
           <label>
             {'Total: '}
@@ -133,22 +134,26 @@ class App extends React.Component<{},
               type='range'
               min='0'
               max='100'
-              value={this.state.entropy}
-              onChange={event => this.setState({entropy: parseInt(event.target.value)})}
+              value={this.state.entropySlider}
+              onChange={event => this.setState({entropySlider: parseInt(event.target.value)})}
             />
-            {' ' + this.state.entropy}
+            {' ' + this.state.entropySlider}
           </label>
 
           <button
             type='button'
             onClick={() => {
+              const averageAbility = this.state.total / NUM_ABILITIES;
+              const minMaxDev = Math.min(averageAbility - this.state.minScore, this.state.maxScore - averageAbility);
+              const entropy = Math.ceil(minMaxDev * NUM_ABILITIES * this.state.entropySlider / 50);
+              //console.log(entropy);
               this.setState({
                 abilities: generateAbilities(
                   this.state.total,
                   this.state.minScore,
                   this.state.maxScore,
                   NUM_ABILITIES,
-                  Math.ceil(this.state.total * (this.state.maxScore - this.state.minScore) * this.state.entropy / 1000))
+                  entropy)
               });
             }}
           >
