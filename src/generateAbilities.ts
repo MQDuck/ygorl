@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2020 Jeffrey Thomas Piercy
+ *
+ * This file is part of Ygorl Ability Score Generator.
+ *
+ * Ygorl Ability Score Generator is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or (at your option)
+ * any later version.
+ *
+ * Ygorl Ability Score Generator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Ygorl Ability Score Generator.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 function randInt(stop: number) {
   return Math.floor(Math.random() * stop);
 }
@@ -24,14 +43,11 @@ export function generateAbilities(
     return new Array(numAbilities).fill(maxScore);
   }
 
-  // Create ability score array with equal values, different by at most one and summing to numAbilities.
+  // Create ability score array values differing by at most one and summing to numAbilities.
   const numExtra = total % numAbilities;
   const abilities = new Array(numAbilities).fill((total - numExtra) / numAbilities);
   if (numExtra !== 0) {
-    const candidates = Array(numAbilities);
-    for (let i = 0; i < numAbilities; ++i) {
-      candidates[i] = i;
-    }
+    const candidates = Array.from({length: numAbilities}, (_, i) => i);
     for (let k = 0; k < numExtra; ++k) {
       const randIndex = randInt(candidates.length);
       ++abilities[candidates[randIndex]];
@@ -40,92 +56,20 @@ export function generateAbilities(
   }
 
   // Randomly modify values values within the passed parameters.
-  /*for (let k = 0; k < entropy; ++k) {
-    let up: number;
-    let down: number;
-    let minIndex = 0;
-    let maxIndex = 0;
-    let numMin = 0;
-    let numMax = 0;
-
-    for (let i = 0; i < numAbilities; ++i) {
-      if (abilities[i] === minScore) {
-        ++numMin;
-      } else if (abilities[i] === maxScore) {
-        ++numMax;
-      }
-
-      if (abilities[i] < abilities[minIndex]) {
-        minIndex = i;
-      }
-      if (abilities[i] > abilities[maxIndex]) {
-        maxIndex = i;
-      }
-    }
-
-    if (numMin === numAbilities - 1) {
-      down = maxIndex;
-      up = randInt(numAbilities - 1);
-      if (up >= down) {
-        ++up;
-      }
-    } else if (numMax === numAbilities - 1) {
-      up = minIndex;
-      down = randInt(numAbilities - 1);
-      if (down >= up) {
-        ++down;
-      }
-    } else {
-      const upCandidates = [];
-      for (let i = 0; i < numAbilities; ++i) {
-        if (abilities[i] < maxScore) {
-          upCandidates.push(i);
-        }
-      }
-      up = randElement(upCandidates);
-
-      const downCandidates = [];
-      for (let i = 0; i < numAbilities; ++i) {
-        if (abilities[i] > minScore && i !== up) {
-          downCandidates.push(i);
-        }
-      }
-      down = randElement(downCandidates);
-    }
-
-    ++abilities[up];
-    --abilities[down];
-  }*/
-
   for (let k = 0; k < entropy; ++k) {
-    let upCandidates = Array<number>();
-    let downCandidates = Array<number>();
+    const upCandidates = Array.from({length: numAbilities}, (_, i) => i)
+      .filter(ability => abilities[ability] < maxScore);
+    const downCandidates = Array.from({length: numAbilities}, (_, i) => i)
+      .filter(ability => abilities[ability] > minScore);
     let up: number;
     let down: number;
-
-    for (let i = 0; i < numAbilities; ++i) {
-      if (abilities[i] < maxScore) {
-        upCandidates.push(i);
-      }
-      if (abilities[i] > minScore) {
-        downCandidates.push(i);
-      }
-    }
 
     if (downCandidates.length !== 1) {
       up = randElement(upCandidates);
-      const upDownIndex = downCandidates.indexOf(up);
-      if (upDownIndex !== -1) {
-        downCandidates.splice(upDownIndex, 1);
-      }
-      down = randElement(downCandidates);
+      down = randElement(downCandidates.filter(ability => ability !== up));
     } else {
       down = downCandidates[0];
-      const downUpIndex = upCandidates.indexOf(down);
-      if (downUpIndex !== -1) {
-        upCandidates.splice(downUpIndex, 1);
-      }
-      up = randElement(upCandidates)
+      up = randElement(upCandidates.filter(ability => ability !== down));
     }
 
     ++abilities[up];

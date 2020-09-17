@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2020 Jeffrey Thomas Piercy
+ *
+ * This file is part of Ygorl Ability Score Generator.
+ *
+ * Ygorl Ability Score Generator is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or (at your option)
+ * any later version.
+ *
+ * Ygorl Ability Score Generator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Ygorl Ability Score Generator.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
@@ -7,7 +26,7 @@ const NUM_ABILITIES = 6;
 const DEFAULT_TOTAL = 72;
 const DEFAULT_MIN_SCORE = 6;
 const DEFAULT_MAX_SCORE = 17;
-const DEFAULT_ENTROPY = 50;
+const DEFAULT_ENTROPY_SLIDER = 40;
 
 class App extends React.Component<{},
   {
@@ -23,8 +42,8 @@ class App extends React.Component<{},
   constructor(props: {}) {
     super(props);
     this.state = {
-      abilities: Array(6),
-      entropySlider: DEFAULT_ENTROPY,
+      abilities: Array(NUM_ABILITIES),
+      entropySlider: DEFAULT_ENTROPY_SLIDER,
       total: DEFAULT_TOTAL,
       minScore: DEFAULT_MIN_SCORE,
       maxScore: DEFAULT_MAX_SCORE,

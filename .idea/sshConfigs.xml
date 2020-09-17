@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig authType="PASSWORD" host="mqduck.net" id="562e0fbd-08e6-4f71-a833-f8cf06ce61f0" port="22" nameFormat="DESCRIPTIVE" username="www" />
-    </configs>
-  </component>
-</project>
