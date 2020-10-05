@@ -25,12 +25,13 @@ function randElement(arr: any[]) {
   return arr[randInt(arr.length)];
 }
 
-export function generateAbilities(
+export default function generateAbilities(
   total: number,
   minScore: number,
   maxScore: number,
   numAbilities: number,
-  entropy: number) {
+  entropy: number
+) : number[] {
   if (maxScore * numAbilities < total || minScore * numAbilities > total) {
     throw new Error('Invalid parameters');
   }
@@ -43,11 +44,13 @@ export function generateAbilities(
     return new Array(numAbilities).fill(maxScore);
   }
 
+  const abilityIndices = Array.from({length: numAbilities}, (_, i) => i);
+
   // Create ability score array values differing by at most one and summing to numAbilities.
   const numExtra = total % numAbilities;
   const abilities = new Array(numAbilities).fill((total - numExtra) / numAbilities);
   if (numExtra !== 0) {
-    const candidates = Array.from({length: numAbilities}, (_, i) => i);
+    const candidates = [...abilityIndices]
     for (let k = 0; k < numExtra; ++k) {
       const randIndex = randInt(candidates.length);
       ++abilities[candidates[randIndex]];
@@ -57,19 +60,17 @@ export function generateAbilities(
 
   // Randomly modify values values within the passed parameters.
   for (let k = 0; k < entropy; ++k) {
-    const upCandidates = Array.from({length: numAbilities}, (_, i) => i)
-      .filter(ability => abilities[ability] < maxScore);
-    const downCandidates = Array.from({length: numAbilities}, (_, i) => i)
-      .filter(ability => abilities[ability] > minScore);
+    const upCandidates = abilityIndices.filter(i => abilities[i] < maxScore);
+    const downCandidates = abilityIndices.filter(i => abilities[i] > minScore);
     let up: number;
     let down: number;
 
     if (downCandidates.length !== 1) {
       up = randElement(upCandidates);
-      down = randElement(downCandidates.filter(ability => ability !== up));
+      down = randElement(downCandidates.filter(i => i !== up));
     } else {
       down = downCandidates[0];
-      up = randElement(upCandidates.filter(ability => ability !== down));
+      up = randElement(upCandidates.filter(i => i !== down));
     }
 
     ++abilities[up];

@@ -1,1 +1,3 @@
-###Ygorl Ability Score Generator
+### Ygorl Ability Score Generator
+
+http://mqduck.net/ygorl/

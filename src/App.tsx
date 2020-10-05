@@ -20,7 +20,7 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
-import {generateAbilities} from './generateAbilities';
+import generateAbilities from './generateAbilities';
 
 const NUM_ABILITIES = 6;
 const DEFAULT_TOTAL = 72;
@@ -108,6 +108,7 @@ class App extends React.Component<{},
             <input
               type='text'
               name='total'
+              className='Input'
               value={this.state.totalStr}
               onChange={event => this.setState({totalStr: event.target.value})}
               onBlur={() => this.updateTotal()}
@@ -124,6 +125,7 @@ class App extends React.Component<{},
             <input
               type='text'
               name='minimum'
+              className='Input'
               value={this.state.minScoreStr}
               onChange={event => this.setState({minScoreStr: event.target.value})}
               onBlur={() => this.updateMinScore()}
@@ -137,6 +139,7 @@ class App extends React.Component<{},
             <input
               type='text'
               name='maximum'
+              className='Input'
               value={this.state.maxScoreStr}
               onChange={event => this.setState({maxScoreStr: event.target.value})}
               onBlur={() => this.updateMaxScore()}
@@ -151,6 +154,7 @@ class App extends React.Component<{},
           <label>
             <input
               type='range'
+              className='Input'
               min='0'
               max='100'
               value={this.state.entropySlider}
@@ -161,6 +165,7 @@ class App extends React.Component<{},
 
           <button
             type='button'
+            className='Input'
             onClick={() => {
               const averageAbility = this.state.total / NUM_ABILITIES;
               const minMaxDev = Math.min(averageAbility - this.state.minScore, this.state.maxScore - averageAbility);
